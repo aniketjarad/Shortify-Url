@@ -13,7 +13,7 @@
 		public function __construct() {
 
 			// replace project name from url only for local env
-			$url = str_replace('/MiniProject', '', $_SERVER['REQUEST_URI']);
+			$url = str_replace('/Shortify-Url', '', $_SERVER['REQUEST_URI']);
 			//for serve env
 			// $url = $_SERVER['REQUEST_URI'];
 			$parts = explode('/',$url);
@@ -22,7 +22,6 @@
 			$this->_controller = ($c = array_shift($parts))? ucfirst($c): 'Home';
 			$this->_method = ($c = array_shift($parts))? $c: 'index';
 			$this->_args = (isset($parts[0])) ? $parts : array();
-			
 		}
 
 		public function getController() {
